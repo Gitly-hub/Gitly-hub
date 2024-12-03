@@ -19,7 +19,9 @@ app.get("/",auth,(req,res)=>{
 connectToDB()
     .then(()=>{
      console.log("Connected to MongoDB");
-     app.listen(3000,()=>{
+     const PORT = process.env.PORT || 3000;
+
+     app.listen(PORT,()=>{
         console.log("server running on http://localhost:3000 successfully");
     });})
     .catch((e)=>{
